@@ -16,39 +16,40 @@
     <!--[if lt IE 9]>
     <script src="<?php echo get_template_directory_uri();?>/includes/js/html5.js"></script>
     <![endif]-->
-    <?php wp_head();?>
+<?php wp_head();?>
 </head>
 
 <body <?php body_class();?>>
-  <?php do_action('before');?>
+<?php do_action('before');?>
 <header id="masthead" class="site-header" role="banner">
     <div class="header-top">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="mail-info">
-            			<?php if (of_get_option('phone_number')): ?>
+<?php if (of_get_option('phone_number')):?>
             			    <span class="phone-info"><i class="fa fa-phone"></i> <?php echo of_get_option('phone_number');?></span>
-            			<?php endif;?>
-                        <?php if (of_get_option('title_top')): ?>
+<?php endif;?>
+                        <?php if (of_get_option('title_top')):?>
                             <span class="phone-info"><?php echo of_get_option('title_top');?></span>
-                        <?php endif;?>
-            			<?php if (of_get_option('email_id')): ?>
-            			    <span><i class="fa fa-envelope"></i> <a href="mailto:<?php echo of_get_option('email_id');?>"><?php echo of_get_option('email_id');?></a></span>
-            			<?php endif;?>
-                    </div>
+<?php endif;?>
+            			<?php if (of_get_option('email_id')):?>
+            			    <span><i class="fa fa-envelope"></i> <a href="mailto:<?php echo of_get_option('email_id');?>"><?php echo of_get_option('email_id');
+?></a></span>
+<?php endif;?>
+</div>
                 </div><!-- .col-sm-6-->
                 <div class="col-sm-6">
                     <div class="header-social-icon-wrap">
                         <ul class="social-icons">
-                            <?php if (of_get_option('link_top')): ?>
-                                <?php echo '<li class="url-top"><a target="_blank" href="' . of_get_option('link_top_url') . '">' . of_get_option('link_top') . '</a></li>'?>
+<?php if (of_get_option('link_top')):?>
+                                <?php echo '<li class="url-top"><a target="_blank" href="'.of_get_option('link_top_url').'">'.of_get_option('link_top').'</a></li>'?>
                             <?php endif;?>
             			    <?php
 $socialmedia_navs = ascent_socialmedia_navs();
 foreach ($socialmedia_navs as $socialmedia_url => $socialmedia_icon) {
 	if (of_get_option($socialmedia_url)) {
-		echo '<li class="social-icon"><a target="_blank" href="' . of_get_option($socialmedia_url) . '"><i class="' . $socialmedia_icon . '"></i></a></li>';
+		echo '<li class="social-icon"><a target="_blank" href="'.of_get_option($socialmedia_url).'"><i class="'.$socialmedia_icon.'"></i></a></li>';
 	}
 }
 ?>
@@ -68,9 +69,9 @@ foreach ($socialmedia_navs as $socialmedia_url => $socialmedia_icon) {
                                 <div class="site-branding">
                                     <h1 class="site-title">
                                         <a href="<?php echo esc_url(home_url('/'));?>" title="<?php echo esc_attr(get_bloginfo('name', 'display'));?>" rel="home">
-                        				    <?php if (of_get_option('logo')): ?>
+<?php if (of_get_option('logo')):?>
         					                   <img src="<?php echo of_get_option('logo');?>" alt="<?php bloginfo('name');?>">
-                        				    <?php else: ?>
+<?php  else :?>
         					                   <?php bloginfo('name');?>
                         				    <?php endif;?>
                     				    </a>
@@ -87,14 +88,14 @@ foreach ($socialmedia_navs as $socialmedia_url => $socialmedia_icon) {
                         </div>
                         <div class="site-navigation pull-right">
             			    <nav class="main-menu">
-            				<?php
+<?php
 wp_nav_menu(array(
-	'theme_location' => 'main-menu',
-	'container' => false,
-	'menu_class' => 'header-nav clearfix',
-));
+		'theme_location' => 'main-menu',
+		'container'      => false,
+		'menu_class'     => 'header-nav clearfix',
+	));
 ?>
-            			    </nav>
+</nav>
     	                    <div id="responsive-menu-container"></div>
                         </div><!-- .site-navigation -->
                     </div><!--.col-sm-9-->
@@ -102,11 +103,10 @@ wp_nav_menu(array(
             </div><!-- .container -->
         </div><!--.header-bottom-inner-->
     </div><!--.header-bottom-->
-  <?php include_once 'header-searchform.php'?>
+<?php include_once 'header-searchform.php'?>
 </header><!-- #masthead -->
 
 <?php include_once 'header-banner.php'?>
-
 <div class="main-content">
     <div class="container">
         <div id="content" class="main-content-inner">

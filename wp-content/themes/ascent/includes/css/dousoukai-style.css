@@ -1,0 +1,12 @@
+li.url-top{
+	display: inline-block;
+}
+li.url-top a{
+	text-decoration: underline;
+	padding-right: 10px;
+}
+@media (min-width: 992px) {
+	.owl-item .item img {
+   		height: 300px;
+	}
+}
